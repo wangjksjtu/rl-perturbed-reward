@@ -20,14 +20,14 @@ The implementation is based on [keras-rl](https://github.com/keras-rl/keras-rl) 
 - python 3.5
 - tensorflow 1.10.0, keras 2.1.0
 - gym, scipy, scipy, joblib, keras
-- progressbar2, mpi4py, cloudpickle, opencv-python
+- progressbar2, mpi4py, cloudpickle, opencv-python, h5py, pandas
 
+Note: make sure that you have successfully installed the baseline package and other packages following (using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) to create virtual environment):
 ```
-mkvirtualenv rl-noisy
+mkvirtualenv rl-noisy --python==/usr/bin/python3
+pip install -r requirements.txt
 cd gym-atari/baselines
 pip install -e .
-cd ../../
-pip install -r requirements.txt
 ```
 
 ## Examples
