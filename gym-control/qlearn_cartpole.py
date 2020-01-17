@@ -272,13 +272,6 @@ class PostProcessor:
 if __name__ == '__main__':
     env = gym.make('CartPole-v0')
 
-    # DEPRECATED as of 12/23/2016
-    # env.monitor.start('/tmp/cartpole-experiment-1', force=True)
-    #    # video_callable=lambda count: count % 10 == 0)
-
-    # env = gym.wrappers.Monitor(env, '/tmp/cartpole-experiment-1', force=True)
-        # video_callable=lambda count: count % 10 == 0)
-
     goal_average_steps = 195
     max_number_of_steps = 200
     last_time_steps = np.ndarray(0)
@@ -305,7 +298,7 @@ if __name__ == '__main__':
         if not SMOOTH: post_processor = PostProcessor(smooth=False, surrogate=True, reverse=True)
         else: post_processor = PostProcessor(smooth=True, surrogate=True, reverse=True)
 
-    else: 
+    else:
         if not SMOOTH: post_processor = PostProcessor(smooth=False, surrogate=True)
         else: post_processor = PostProcessor(smooth=True, surrogate=True)
 
@@ -319,7 +312,7 @@ if __name__ == '__main__':
                              to_bin(cart_velocity, cart_velocity_bins),
                              to_bin(angle_rate_of_change, angle_rate_bins)])
 
-        for t in xrange(max_number_of_steps):
+        for t in range(max_number_of_steps):
             # env.render()
 
             # Pick an action based on the current state
