@@ -1,21 +1,30 @@
-# Reinforcement Learning with Perturbed Rewards
+# RL with Perturbed Rewards
 
-This is the tensorflow implementation of RL with Perturbed Reward as described in the following AAAI 2020 paper (Spotlight):
+This is the tensorflow implementation of [Reinforcement Learning with Perturbed Rewards](https://arxiv.org/abs/1810.01032) as described in the following AAAI 2020 paper (__Spotlight__):
 
-The implementation is based on [keras-rl](https://github.com/keras-rl/keras-rl) and [OpenAI baselines](https://github.com/openai/baselines) frameworks.
+```
+@inproceedings{wang2020rlnoisy,
+  title={Reinforcement Learning with Perturbed Rewards},
+  author={Wang, Jingkang and Liu, Yang and Li, Bo},
+  booktitle={AAAI},
+  year={2020}
+}
+```
 
-- rl-noisy-reward-control: Classic control games
-- rl-noisy-reward-atari:   Atari-2600 games
+The implementation is based on [keras-rl](https://github.com/keras-rl/keras-rl) and [OpenAI baselines](https://github.com/openai/baselines) frameworks. Thanks to the original authors!
+
+- `gym-control`: Classic control games
+- `gym-atari`:   Atari-2600 games
 
 ## Dependencies
 - python 3.5
-- tensorflow 1.10.0+
+- tensorflow 1.10.0
 - gym, scipy, scipy, joblib, keras
 - progressbar2, mpi4py, cloudpickle, opencv-python
 
 ```
 mkvirtualenv rl-noisy
-cd rl-noisy-reward-atari/baselines
+cd gym-atari/baselines
 pip install -e .
 ```
 
@@ -42,7 +51,7 @@ python -m baselines.run --alg=ppo2 --env=PhoenixNoFrameskip-v4 \  # surrogate re
 
 ## Reproduce the Results
 To reproduce all the results reported in the paper, please refer to `scripts/` folders in `rl-noisy-reward-control` and `rl-noisy-reward-atari`:
-- `rl-noisy-reward-control/scripts`
+- `gym-control/scripts`
   - Cartpole
     - `train-cem.sh` (CEM)
     - `train-dqn.sh` (DQN)
@@ -52,7 +61,7 @@ To reproduce all the results reported in the paper, please refer to `scripts/` f
   - Pendulum
     - `train-ddpg.sh` (DDPG)
     - `train-naf.sh` (NAF)
-- `rl-noisy-reward-atari/scripts`
+- `gym-atari/scripts`
   - `train-alien.sh` (Alien)
   - `train-carnival.sh` (Carnival)
   - `train-mspacman.sh` (MsPacman)
@@ -76,4 +85,4 @@ python -m baselines.results_single --log_dir logs-alien
 Please cite our paper if you use this code in your research work.
 
 ## Questions/Bugs
-Please submit a Github issue or contact rjliao@cs.toronto.edu if you have any questions or find any bugs.
+Please submit a Github issue or contact wangjk@cs.toronto.edu if you have any questions or find any bugs.
