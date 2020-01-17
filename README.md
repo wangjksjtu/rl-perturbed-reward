@@ -18,7 +18,7 @@ The implementation is based on [keras-rl](https://github.com/keras-rl/keras-rl) 
 
 ## Dependencies
 - python 3.5
-- tensorflow 1.10.0
+- tensorflow 1.10.0, keras 2.1.0
 - gym, scipy, scipy, joblib, keras
 - progressbar2, mpi4py, cloudpickle, opencv-python
 
@@ -26,19 +26,21 @@ The implementation is based on [keras-rl](https://github.com/keras-rl/keras-rl) 
 mkvirtualenv rl-noisy
 cd gym-atari/baselines
 pip install -e .
+cd ../../
+pip install -r requirements.txt
 ```
 
 ## Examples
 - Classic control (DQN on Cartpole)
 ```
-cd rl-noisy-reward-control
+cd gym-control
 python cem_cartpole.py                                           # true reward
 python dqn_cartpole.py --error_positive 0.1 --reward noisy       # perturbed reward
 python dqn_cartpole.py --error_positive 0.1 --reward surrogate   # surrogate reward (estimated)
 ```
 - Atari-2600 (PPO on Phoenix)
 ```
-cd rl-noisy-reward-atari/baselines
+cd gym-atari/baselines
 python -m baselines.run --alg=ppo2 --env=PhoenixNoFrameskip-v4 \  # true reward
        --num_timesteps=5e7 --normal=True                          
 python -m baselines.run --alg=ppo2 --env=PhoenixNoFrameskip-v4 \  # noisy reward
