@@ -20,7 +20,7 @@ setup(name='baselines',
           'cloudpickle',
           'tensorflow-gpu==1.10.0',
           'click',
-          'opencv-python'
+          'opencv-python',
       ],
       extras_require={
         'test': [
