@@ -1,5 +1,5 @@
-# rl-noisy-reward-atari
-Reinforcement Learning with Noisy Reward (Atari Games)
+# gym-atari
+Reinforcement Learning with Perturbed Reward (Atari Games)
 
 ## Usage
 ### Training

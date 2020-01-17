@@ -1,4 +1,4 @@
-# rl-noisy-reward-control
+# gym-control
 Reinforcement Learning with Perturbed Reward (control games)
 
 ## Usage
