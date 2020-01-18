@@ -249,7 +249,7 @@ class PostProcessor:
 
     def smooth_reward(self, state, action, reward):
         if self.smooth:
-            if self.r_smooth.has_key((state, action)):
+            if (state, action) in self.r_smooth:
                 if len(self.r_smooth[(state, action)]) >= 100:
                     self.r_smooth[(state, action)].pop(0)
                     self.r_smooth[(state, action)].append(reward)
@@ -262,7 +262,7 @@ class PostProcessor:
         return reward
 
     def collect(self, state, action, reward):
-        if self.r_sets.has_key((state, action)):
+        if (state, action) in self.r_sets:
             self.r_sets[(state, action)].append(reward)
         else:
             self.r_sets[(state, action)] = [reward]
