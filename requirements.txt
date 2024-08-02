@@ -1,4 +1,4 @@
 pandas
 matplotlib
-keras==2.1.0
+keras==2.13.1
 h5py
